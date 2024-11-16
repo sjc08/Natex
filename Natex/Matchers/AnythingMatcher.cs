@@ -2,6 +2,9 @@
 
 namespace Asjc.Natex.Matchers
 {
+    /// <summary>
+    /// A NatexMatcher that returns <see langword="true"/> eternally when the pattern is "*" or "any".
+    /// </summary>
     public class AnythingMatcher : NatexMatcher
     {
         /// <inheritdoc/>

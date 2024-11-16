@@ -3,6 +3,9 @@ using System.Collections;
 
 namespace Asjc.Natex.Matchers
 {
+    /// <summary>
+    /// A NatexMatcher for determining whether an object is null or empty.
+    /// </summary>
     public class NullOrEmptyMatcher : INatexMatcher
     {
         /// <inheritdoc/>

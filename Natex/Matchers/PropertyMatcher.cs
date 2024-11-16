@@ -9,8 +9,6 @@ namespace Asjc.Natex.Matchers
     {
         public List<string[]> DefaultPaths { get; set; } = [];
 
-        public bool AlwaysMatchDefault { get; set; } = true;
-
         /// <inheritdoc/>
         public override Func<object?, bool?>? Create(Natex natex)
         {
@@ -35,13 +33,9 @@ namespace Asjc.Natex.Matchers
             return value =>
             {
                 if (path == null)
-                {
                     return DefaultPaths.Any(Handle) ? true : null;
-                }
                 else
-                {
-                    return Handle(path) || AlwaysMatchDefault && DefaultPaths.Any(Handle);
-                }
+                    return Handle(path);
 
                 bool Handle(string[] path)
                 {

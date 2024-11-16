@@ -1,6 +1,9 @@
 ﻿
 namespace Asjc.Natex.Matchers
 {
+    /// <summary>
+    /// A NatexMatcher for handling logical negation operator ("!").
+    /// </summary>
     public class NegationMatcher : INatexMatcher
     {
         /// <inheritdoc/>

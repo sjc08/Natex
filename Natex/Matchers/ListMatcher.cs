@@ -2,6 +2,9 @@
 
 namespace Asjc.Natex.Matchers
 {
+    /// <summary>
+    /// A NatexMatcher for <see cref="IList"/>.
+    /// </summary>
     public class ListMatcher : NatexMatcher<IList>
     {
         /// <inheritdoc/>
