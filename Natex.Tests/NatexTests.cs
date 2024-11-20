@@ -43,8 +43,9 @@ namespace Asjc.Natex.Tests
         public void Comparison()
         {
             Assert.IsTrue(new Natex(">0").Match(1));
-            Assert.IsTrue(new Natex("��1").Match(1));
-            Assert.IsFalse(new Natex("��1").Match(1));
+            Assert.IsTrue(new Natex("＞0").Match(1));
+            Assert.IsTrue(new Natex(">=1").Match(1));
+            Assert.IsTrue(new Natex("≥1").Match(1));
             Assert.IsTrue(new Natex(">2024/1/1 00:00:00").Match(new DateTime(2024, 1, 1, 12, 0, 0)));
             Assert.IsTrue(new Natex("6/1").Match(DateTime.Parse("6/1")));
         }
