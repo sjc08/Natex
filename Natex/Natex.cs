@@ -28,7 +28,7 @@ namespace Asjc.Natex
                 new ListMatcher(),
                 new RegexMatcher(),
                 new MultiPatternMatcher(),
-                new PropertyMatcher(),
+                new PropertyMatcher()
             ];
             Mode = NatexMode.Exact;
             CaseInsensitive = true;
@@ -53,7 +53,7 @@ namespace Asjc.Natex
                 new ListMatcher(),
                 new RegexMatcher(),
                 new MultiPatternMatcher(),
-                new PropertyMatcher(),
+                new PropertyMatcher()
             ];
             Mode = NatexMode.Exact;
             CaseInsensitive = true;
