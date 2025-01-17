@@ -67,7 +67,7 @@ namespace Asjc.Natex.Tests
         [TestMethod]
         public void MultiPattern()
         {
-            Assert.IsTrue(new Natex("Text:H. Number:1").Match(new Record("Hi", 1)));
+            Assert.IsTrue(new Natex("Text:H. Number:1").Match(new { Text = "Hi", Number = 1 }));
         }
 
         [TestMethod]
@@ -96,9 +96,9 @@ namespace Asjc.Natex.Tests
         public void Property()
         {
             Assert.IsTrue(new Natex("Length:1").Match(" "));
-            Assert.IsTrue(new Natex("Number:0").Match(new Record(0)));
-            Assert.IsTrue(new Natex("Number:>0").Match(new Record(1)));
-            Assert.IsTrue(new Natex("Text.Length:1").Match(new Record("0")));
+            Assert.IsTrue(new Natex("Number:0").Match(new { Number = 0 }));
+            Assert.IsTrue(new Natex("Number:>0").Match(new { Number = 1 }));
+            Assert.IsTrue(new Natex("Text.Length:1").Match(new { Text = " " }));
         }
 
         [TestMethod]
@@ -106,7 +106,7 @@ namespace Asjc.Natex.Tests
         {
             Natex natex = new("3");
             natex.Matchers.Get<PropertyMatcher>()!.DefaultPaths = [["Foo"], ["Text", "Length"], ["Foo"]];
-            Assert.IsTrue(natex.Match(new Record("ABC", 1)));
+            Assert.IsTrue(natex.Match(new { Text = "ABC", Number = 1 }));
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace Asjc.Natex.Tests
         }
 
         [TestMethod]
-        public void String() => Assert.IsTrue(new Natex("Record { Text = A, Number = 1 }").Match(new Record("A", 1)));
+        public void String() => Assert.IsTrue(new Natex("{ Text = A, Number = 1 }").Match(new { Text = "A", Number = 1 }));
 
 
         [TestMethod]
@@ -137,6 +137,5 @@ namespace Asjc.Natex.Tests
             Assert.IsTrue(new Natex("{Today}").Match(DateTime.Today));
             Assert.IsTrue(new Natex("-{UserName}-").Match($"-{Environment.UserName}-"));
         }
-      
     }
 }

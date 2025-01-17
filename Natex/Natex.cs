@@ -144,7 +144,6 @@ namespace Asjc.Natex
                     if (!map.ContainsKey(matcher))
                         map.Add(matcher, matcher.Create(this));
                 }
-
             }
         }
 
