@@ -19,14 +19,14 @@ namespace Asjc.Natex.Matchers
             string[]? path = null;
             string pattern;
             var arr = natex.Pattern.Split(':', 2);
-            if (arr.Length == 2)
+            if (arr.Length == 2 && !arr[0].Contains(' ')) // Perhaps properties that are clearly illegal should be ignored.
             {
                 path = arr[0].Split('.');
                 pattern = arr[1];
             }
             else
             {
-                pattern = arr[0];
+                pattern = natex.Pattern;
             }
             // Create a Natex.
             natex = new(pattern, natex);

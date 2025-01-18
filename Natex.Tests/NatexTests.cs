@@ -110,6 +110,15 @@ namespace Asjc.Natex.Tests
         }
 
         [TestMethod]
+        public void Property_DefaultPaths_DateTime()
+        {
+            var now = DateTime.Now;
+            Natex natex = new(now.ToString());
+            natex.Matchers.Get<PropertyMatcher>()!.DefaultPaths = [["DateTime"]];
+            Assert.IsTrue(natex.Match(new { DateTime = now }));
+        }
+
+        [TestMethod]
         public void Range() => Assert.IsTrue(new Natex("1-3").Match(2));
 
         [TestMethod]
