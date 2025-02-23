@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.5.13</Version>
+    <Version>0.5.15</Version>
     <Authors>AlexSJC</Authors>
     <Description>Provides a quick and easy way to match objects.</Description>
     <Copyright>Copyright © $(Authors) $([System.DateTime]::Now.Year)</Copyright>
@@ -32,7 +32,7 @@
 
   <ItemGroup>
     <PackageReference Include="Asjc.Collections.Extended" Version="1.3.4" />
-    <PackageReference Include="Asjc.Utils" Version="1.1.3" />
+    <PackageReference Include="Asjc.Utils" Version="1.1.5" />
   </ItemGroup>
 
 </Project>
